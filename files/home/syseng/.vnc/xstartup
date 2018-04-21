@@ -1,0 +1,6 @@
+#! /bin/sh
+
+xsetroot -grey
+xrdb "$HOME"/.Xresources
+vncconfig -nowin &
+exec i3
