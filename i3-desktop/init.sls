@@ -19,3 +19,7 @@ remove-packages:
   pkg.purged:
     - pkgs:
       - vim-tiny
+
+disable-gui-on-boot:
+  cmd.run:
+    - name: 'systemctl set-default multi-user.target'
