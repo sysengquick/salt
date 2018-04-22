@@ -1,4 +1,7 @@
 base:
+  'virtual:VirtualBox':
+    - match: grain
+    - virtualbox.guest-additions
   'debian-clone':
     - i3-desktop
     - i3-desktop.editor
@@ -8,4 +11,3 @@ base:
     - i3-desktop.tigervnc
     - i3-desktop.urxvt
     - i3-desktop.users
-    - i3-desktop.vbox-additions

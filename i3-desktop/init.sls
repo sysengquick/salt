@@ -2,7 +2,6 @@ install-packages:
   pkg.latest:
     - pkgs:
       - acl
-      - dkms
       - firefox-esr
       - fonts-inconsolata
       - git
