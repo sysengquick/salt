@@ -8,6 +8,6 @@ copy-iptables-rules:
 
 enable-routing:
   sysctl.present:
-    - name: ip_forward
+    - name: net.ipv4.ip_forward
     - value: 1
     - config: '/etc/sysctl.d/local.conf'
