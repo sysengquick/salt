@@ -1,3 +1,13 @@
+salt-master-private-key:
+  file.managed:
+    - name: '/etc/salt/pki/master.pem'
+    - contents_pillar: {{ pillar['salt-master-pki']['private'] }}
+
+salt-master-public-key:
+  file.managed:
+    - name: '/etc/salt/pki/master.pub'
+    - contents_pillar: {{ pillar['salt-master-pki']['public'] }}
+
 salt-minion-config:
   file.managed:
     - name: '/etc/salt/minion.d/local.conf'
