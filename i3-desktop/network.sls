@@ -10,8 +10,8 @@ rename-network-cards:
   file.managed:
     - name: '/etc/udev/rules.d/70-network.rules'
     - contents: |
-        SUBSYSTEM=="net",ACTION=="add",ATTR{address}=="{{ wan_mac }}" NAME="wan"
-        SUBSYSTEM=="net",ACTION=="add",ATTR{address}=="{{ lan_mac }}",NAME="lan
+        SUBSYSTEM=="net",ACTION=="add",ATTR{address}=="{{ wan_mac }}",NAME="wan"
+        SUBSYSTEM=="net",ACTION=="add",ATTR{address}=="{{ lan_mac }}",NAME="lan"
 
 global-network-config:
   network.system:
