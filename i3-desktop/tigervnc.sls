@@ -1,5 +1,5 @@
 tigervnc-systemd-state:
-  - file.managed:
+  file.managed:
     - name: '/etc/systemd/system/tigervnc@:1.service'
     - source: salt://files/etc/systemd/system/tigervnc@:1.service
     - user: root
