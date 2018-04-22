@@ -35,7 +35,7 @@ copy-root-files:
     - user: root
     - group: root
     - dir_mode: 0755
-    - file_mode: 0644
+    - file_mode: keep
 
 copy-user-files:
   file.recurse:
@@ -44,12 +44,4 @@ copy-user-files:
     - user: syseng
     - group: syseng
     - dir_mode: 0755
-    - file_mode: 0644
-
-vnc-xstartup-file:
-  file.managed:
-    - name: '/home/syseng/.vnc/xstartup'
-    - source: salt://files/home/syseng/.vnc/xstartup
-    - user: syseng
-    - group: syseng
-    - mode: 0755
+    - file_mode: keep
