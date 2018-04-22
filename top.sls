@@ -3,11 +3,11 @@ base:
     - match: grain
     - virtualbox.guest-additions
   'debian-clone':
-    - i3-desktop
-    - i3-desktop.editor
-    - i3-desktop.iptables
-    - i3-desktop.network
-    - i3-desktop.salt
-    - i3-desktop.tigervnc
-    - i3-desktop.urxvt
-    - i3-desktop.users
+    - salt-master.editor
+    - salt-master.iptables
+    - salt-master.network
+    - salt-master.packages
+    - salt-master.salt
+    - salt-master.tigervnc
+    - salt-master.urxvt
+    - salt-master.users
