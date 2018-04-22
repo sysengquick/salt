@@ -17,8 +17,6 @@ global-network-config:
   network.system:
     - enabled: True
     - hostname: debian-master.vbox.local
-    - gateway: 192.168.5.1
-    - gatewaydev: wan
     - require_reboot: True
 
 wan-config:
@@ -29,6 +27,7 @@ wan-config:
     - proto: none
     - ipaddr: 192.168.5.200
     - netmask: 255.255.255.0
+    - gateway: 192.168.5.1
     - dns:
       - 192.168.5.1
     - noifupdown: True
