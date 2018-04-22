@@ -5,6 +5,46 @@ salt-minion-config:
         master: localhost
         id: salt-master
 
+srv-pillar-directory:
+  file.directory:
+    - name: '/srv/pillar'
+
+srv-pillar-directory-acl-default:
+  acl.present:
+    - name: '/srv/pillar'
+    - acl_type: default:user
+    - acl_name: syseng
+    - perms: rwx
+    - recurse: True
+
+srv-pillar-directory-acl:
+  acl.present:
+    - name: '/srv/pillar'
+    - acl_type: user
+    - acl_name: syseng
+    - perms: rwx
+    - recurse: True
+
+srv-salt-directory:
+  file.directory:
+    - name: '/srv/salt'
+
+srv-salt-directory-acl-default:
+  acl.present:
+    - name: '/srv/salt'
+    - acl_type: default:user
+    - acl_name: syseng
+    - perms: rwx
+    - recurse: True
+
+srv-salt-directory-acl:
+  acl.present:
+    - name: '/srv/salt'
+    - acl_type: user
+    - acl_name: syseng
+    - perms: rwx
+    - recurse: True
+
 git-srv-pillar:
   git.latest:
     - name: https://github.com/sysengquick/pillar.git
