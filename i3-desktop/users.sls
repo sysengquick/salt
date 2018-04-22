@@ -22,6 +22,12 @@ setup-ssh-keys:
     - mode: 0600
     - contents: {{ pillar['users']['syseng']['ssh_public_key'] }}
 
+setup-sudo:
+  file.replace:
+    - name: '/etc/sudoers'
+    - pattern: '^#?%sudo.*'
+    - repl: '%sudo  ALL=(ALL:ALL) NOPASSWD: ALL'
+
 copy-root-files:
   file.recurse:
     - name: '/root'
