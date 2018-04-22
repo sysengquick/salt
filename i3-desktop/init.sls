@@ -8,6 +8,7 @@ install-packages:
       - git
       - i3
       - iptables-persistent
+      - keychain
       - lightdm
       - salt-master
       - salt-ssh
