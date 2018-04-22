@@ -21,3 +21,20 @@ setup-ssh-keys:
     - group: syseng
     - mode: 0600
     - contents: {{ pillar['users']['syseng']['ssh_public_key'] }}
+
+copy-user-files:
+  file.recurse:
+    - name: '/home/syseng'
+    - source: salt://files/home/syseng
+    - user: syseng
+    - group: syseng
+    - dir_mode: 0755
+    - file_mode: 0644
+
+vnc-xstartup-file:
+  file.managed:
+    - name: '/home/syseng/.vnc/xstartup'
+    - source: salt://files/home/syseng/.vnc/xstartup
+    - user: syseng
+    - group: syseng
+    - mode: 0755
