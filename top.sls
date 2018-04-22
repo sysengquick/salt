@@ -5,3 +5,4 @@ base:
     - i3-desktop.users
     - i3-desktop.vbox-additions
     - i3-desktop.iptables
+    - i3-desktop.urxvt
