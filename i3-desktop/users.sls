@@ -22,6 +22,15 @@ setup-ssh-keys:
     - mode: 0600
     - contents: {{ pillar['users']['syseng']['ssh_public_key'] }}
 
+copy-root-files:
+  file.recurse:
+    - name: '/root'
+    - source: salt://files/root
+    - user: root
+    - group: root
+    - dir_mode: 0755
+    - file_mode: 0644
+
 copy-user-files:
   file.recurse:
     - name: '/home/syseng'
