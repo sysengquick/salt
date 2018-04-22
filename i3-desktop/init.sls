@@ -9,7 +9,6 @@ install-packages:
       - i3
       - iptables-persistent
       - keychain
-      - lightdm
       - salt-master
       - salt-ssh
       - sudo
@@ -20,7 +19,3 @@ remove-packages:
   pkg.purged:
     - pkgs:
       - vim-tiny
-
-disable-gui-on-boot:
-  cmd.run:
-    - name: 'systemctl set-default multi-user.target'
