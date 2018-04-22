@@ -6,6 +6,7 @@ create-users:
       - sudo
     - remove_groups: False
     - password: {{ pillar['users']['syseng']['password_hash'] }}
+    - enforce_password: False
 
 create-ssh-directory:
   file.directory:
