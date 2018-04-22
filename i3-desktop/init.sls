@@ -1,4 +1,4 @@
-packages:
+install-packages:
   pkg.latest:
     - pkgs:
       - acl
@@ -14,3 +14,8 @@ packages:
       - sudo
       - tigervnc-standalone-server
       - vim
+
+remove-packages:
+  pkg.purged:
+    - pkgs:
+      - vim-tiny
