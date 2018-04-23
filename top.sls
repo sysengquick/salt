@@ -1,7 +1,7 @@
 base:
   'virtual:VirtualBox':
     - match: grain
-    - virtualbox.guest-additions
+    - virtualbox
   cobbler:
     - cobbler
   debian-clone:
