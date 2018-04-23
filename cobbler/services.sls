@@ -25,3 +25,5 @@ service-xinetd:
   service.running:
     - name: xinetd
     - enable: True
+    - require:
+      - cmd: cobbler-config-sync
