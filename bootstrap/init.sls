@@ -1,16 +1,15 @@
-packages:
-  pkg.latest:
-    - name: python-apt
-
-salt-repo:
-  pkgrepo.managed:
-    - name: 'deb http://repo.saltstack.com/apt/debian/9/amd64/2018.3 stretch main'
-    - file: '/etc/apt/sources.list.d/saltstack.list'
-    - key_url: 'https://repo.saltstack.com/apt/debian/9/amd64/2018.3/SALTSTACK-GPG-KEY.pub'
+include:
+{% if grains['os'] == 'Debian' and grains['osmajorrelease'] == 9 %}
+  - bootstrap.debian9
+{% elif grains['os_family'] == 'RedHat' and grains['osmajorrelease'] == 7 %}
+  - bootstrap.redhat7
+{% endif %}
 
 salt-minion:
   pkg.latest:
     - name: salt-minion
+    - require:
+      - salt-repo
 
 salt-config:
   file.managed:
@@ -30,3 +29,5 @@ salt-service:
     - watch:
       - file: '/etc/salt/minion.d/local.conf'
       - file: '/etc/salt/minion_id'
+    - require:
+      - pkg: salt-minion
