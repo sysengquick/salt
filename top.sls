@@ -2,7 +2,9 @@ base:
   'virtual:VirtualBox':
     - match: grain
     - virtualbox.guest-additions
-  'debian-clone':
+  cobbler:
+    - cobbler
+  debian-clone:
     - salt-master.editor
     - salt-master.iptables
     - salt-master.network
