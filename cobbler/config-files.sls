@@ -45,7 +45,7 @@ config-dnsmasq:
   file.replace:
     - name: '/etc/cobbler/dnsmasq.template'
     - pattern: '^#?dhcp-range=.*'
-    - repl: 'dhcp-range=172.16.50,172.16.1.99'
+    - repl: 'dhcp-range=172.16.1.50,172.16.1.99'
     - append_if_not_found: True
 
 config-debmirror:
