@@ -4,9 +4,16 @@
 # only run these states if the modules aren't already installed
 {% if version == False %}
 # dkms is required to compile the modules
-install-dkms:
+required-packages:
   pkg.latest:
-    - name: dkms
+    - pkgs:
+      - bzip2
+      - dkms
+      {% if grains['os_family'] == 'RedHat' %}
+      - kernel-devel
+      {% endif %}
+    - require_in:
+      - cmd: run-installer
 
 # copy the installer from the salt master to the minion
 copy-installer:
@@ -19,8 +26,6 @@ copy-installer:
 run-installer:
   cmd.run:
     - name: '/tmp/vbox-additions.sh'
-    - require:
-      - pkg: dkms
 
 # delete the installer
 delete-installer:
