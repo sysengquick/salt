@@ -16,6 +16,55 @@ create-users:
     - require:
       - pkg: sudo
 
+# add syseng ACLs to /srv/pillar and /srv/salt
+srv-pillar-directory:
+  file.directory:
+    - name: '/srv/pillar'
+
+srv-pillar-directory-acl-default:
+  acl.present:
+    - name: '/srv/pillar'
+    - acl_type: default:user
+    - acl_name: syseng
+    - perms: rwx
+    - recurse: True
+    - require:
+      - user: syseng
+
+srv-pillar-directory-acl:
+  acl.present:
+    - name: '/srv/pillar'
+    - acl_type: user
+    - acl_name: syseng
+    - perms: rwx
+    - recurse: True
+    - require:
+      - user: syseng
+
+srv-salt-directory:
+  file.directory:
+    - name: '/srv/salt'
+
+srv-salt-directory-acl-default:
+  acl.present:
+    - name: '/srv/salt'
+    - acl_type: default:user
+    - acl_name: syseng
+    - perms: rwx
+    - recurse: True
+    - require:
+      - user: syseng
+
+srv-salt-directory-acl:
+  acl.present:
+    - name: '/srv/salt'
+    - acl_type: user
+    - acl_name: syseng
+    - perms: rwx
+    - recurse: True
+    - require:
+      - user: syseng
+
 # ensure the correct permissions for the .ssh directory
 create-ssh-directory:
   file.directory:

@@ -4,7 +4,7 @@
 # only run these states if the modules aren't already installed
 {% if version == False %}
 # dkms is required to compile the modules
-required-packages:
+virtualbox-packages:
   pkg.latest:
     - pkgs:
       - bzip2

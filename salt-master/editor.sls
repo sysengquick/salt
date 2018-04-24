@@ -1,5 +1,5 @@
 # make sure vim is installed
-required-packages:
+vim-packages:
   pkg.latest:
     - name: vim
 
@@ -9,4 +9,4 @@ set-default-vim:
     - name: editor
     - path: '/usr/bin/vim.basic'
     - require:
-      - pkg: vim
+      - pkg: vim-packages
