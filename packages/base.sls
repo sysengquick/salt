@@ -7,6 +7,7 @@ base-packages:
       - {{ pillar['packages']['iptables'] }}
       - salt-minion
       - sudo
+      - tmux
       - {{ pillar['packages']['vim'] }}
     - require:
       - epel-repo
