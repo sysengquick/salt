@@ -5,7 +5,6 @@ install-packages:
       - fonts-inconsolata
       - git
       - i3
-      - iptables-persistent
       - keychain
       - salt-master
       - salt-ssh

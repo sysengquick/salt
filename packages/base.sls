@@ -4,6 +4,7 @@ base-packages:
     - pkgs:
       - acl
       - htop
+      - {{ pillar['packages']['iptables'] }}
       - salt-minion
       - sudo
       - {{ pillar['packages']['vim'] }}
