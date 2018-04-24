@@ -1,9 +1,5 @@
 include:
-{% if grains['os'] == 'Debian' and grains['osmajorrelease'] == 9 %}
-  - bootstrap.debian9
-{% elif grains['os_family'] == 'RedHat' and grains['osmajorrelease'] == 7 %}
-  - bootstrap.redhat7
-{% endif %}
+  - packages.salt-repo
 
 salt-minion:
   pkg.latest:
