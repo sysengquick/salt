@@ -7,5 +7,5 @@ epel-repo:
       - epel-release: https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ os.version }}.noarch.rpm
 {% else %}
   cmd.run:
-    - echo 'epel is only used on RHEL/CentOS 6 and 7'
+    - name: echo 'epel is only used on RHEL/CentOS 6 and 7'
 {% endif %}
