@@ -1,6 +1,6 @@
 # we need the epel repo for cobbler packages
 include:
-  - epel
+  - packages.epel-repo
 
 # install the packages necessary to run cobbler
 packages:

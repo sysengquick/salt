@@ -25,14 +25,14 @@ config-next-server:
   file.replace:
     - name: '/etc/cobbler/settings'
     - pattern: '^#?next_server:.*'
-    - repl: 'next_server: 172.16.1.3'
+    - repl: 'next_server: 172.16.1.2'
     - append_if_not_found: True
 
 config-server:
   file.replace:
     - name: '/etc/cobbler/settings'
     - pattern: '^#?server:.*'
-    - repl: 'server: 172.16.1.3'
+    - repl: 'server: 172.16.1.2'
     - append_if_not_found: True
 
 config-modules:
