@@ -1,4 +1,6 @@
 base:
+  '*':
+    - packages
   'virtual:VirtualBox':
     - match: grain
     - virtualbox
